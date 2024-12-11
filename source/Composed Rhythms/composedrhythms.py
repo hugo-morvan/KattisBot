@@ -1,15 +1,25 @@
+import sys
 
-n = int(input())
-groups = []
-remaining = n
+def decompose_rhythm(N):
+    # Start with the largest possible group size
+    groups = []
+    while N > 0:
+        if N >= 3:
+            groups.append(3)
+            N -= 3
+        else:
+            groups.append(2)
+            N -= 2
+    return groups
 
-while remaining > 0:
-    if remaining >= 3:
-        groups.append(3)
-        remaining -= 3
-    else:
-        groups.append(2)
-        remaining -= 2
+# Read input
+N = int(input())
 
-print(len(groups))
-print(*groups)
+# Decompose the rhythm
+decomposition = decompose_rhythm(N)
+
+# Output the result
+print(len(decomposition))
+for group in decomposition:
+    print(group, end=' ')
+print()

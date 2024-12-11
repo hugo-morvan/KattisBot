@@ -1,24 +1,23 @@
-
 def main():
     N, Q = map(int, input().split())
     customers = {}
     
-    # Read customer names
     for _ in range(N):
-        name = input().strip()
-        initials = name.split()[0][0] + name.split()[1][0]
-        if initials in customers:
-            customers[initials].append(name)
-        else:
-            customers[initials] = [name]
+        name = input().split()
+        first_name, last_name = name[0], name[1]
+        if first_name not in customers:
+            customers[first_name] = []
+        customers[first_name].append(last_name)
     
-    # Read queries
     for _ in range(Q):
-        initials = input().strip()
-        if initials in customers:
-            if len(customers[initials]) == 1:
-                print(customers[initials][0])
-            elif len(customers[initials]) > 1:
+        initials = input().split()
+        first_initial, last_initial = initials[0], initials[1]
+        
+        if first_initial in customers:
+            matching_names = customers[first_initial]
+            if len(matching_names) == 1:
+                print(matching_names[0])
+            elif len(matching_names) > 1:
                 print("ambiguous")
             else:
                 print("nobody")

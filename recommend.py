@@ -1,7 +1,7 @@
 ########### Auto recommendation stuff #################
 import os
 
-DIFFICULTY = 2 # 0-1 trivial, 2-3 easy, 4-5 moderate, 6-7 hard
+DIFFICULTY = 0 # 0-1 trivial, 2-3 easy, 4-5 moderate, 6-7 hard
 PROG = '.py' # change to desired programming language file extension
 INCLUDE_PB_LINK_IN_FILE = False
 INCLUDE_PB_LINK_IN_CONSOLE = True
@@ -16,7 +16,7 @@ def get_problem(kt):
     if INCLUDE_PB_LINK_IN_CONSOLE:
         print("link: ",sug[DIFFICULTY]["link"],"\n")
     
-    path = SOURCE_LOCATION + sug[DIFFICULTY]['name']
+    path = SOURCE_LOCATION + sug[DIFFICULTY]['name'].strip('?!.')
     file_name = sug[DIFFICULTY]['pid'] + PROG
     print(file_name)
     file_path = os.path.join(path, file_name).replace("\\","/")

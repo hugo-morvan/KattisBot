@@ -1,0 +1,997 @@
+Submission URL: https://open.kattis.com/submissions/14989083
+https://open.kattis.com/submissions/14989083
+
+Test cases: [....x                       ]  5 / 28
+Run Time Error (0.06 s)
+
+Selecting problem Úllen dúllen doff
+
+link:  https://open.kattis.com/problems/ullendullendoff
+
+ullendullendoff.py
+source/Úllen dúllen doff/ullendullendoff.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def choose_friend(n, friends):
+    mantra = "Úllen dúllen doff kikke lane koff koffe lane bikke bane úllen dúllen doff"
+    words = mantra.split()
+
+    # Find the position of the first word in the mantra
+    start_word_index = words.index(words[0])
+
+    # Determine the starting index for the loop
+    start_index = (start_word_index + n) % n
+
+    # Print the friend at the starting index
+    print(friends[start_index])
+
+# Read input
+n = int(input())
+friends = input().split()
+
+# Choose the friend
+choose_friend(n, friends)
+solution written to file
+source/Úllen dúllen doff/ullendullendoff.py
+
+Compile Error
+
+Selecting problem Cookies
+
+link:  https://open.kattis.com/problems/kakor
+
+kakor.py
+source/Cookies/kakor.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def cookies(N, A):
+    total_cookies = sum(A)
+    return total_cookies
+
+# Read input values
+N = int(input())
+A = list(map(int, input().split()))
+
+# Calculate the total number of cookies
+result = cookies(N, A)
+
+# Print the result
+print(result)
+solution written to file
+source/Cookies/kakor.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989092.
+Submission URL: https://open.kattis.com/submissions/14989092
+https://open.kattis.com/submissions/14989092
+
+Test cases: [...............]  15 / 15
+Accepted (0.05 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Symmetric Order
+
+link:  https://open.kattis.com/problems/symmetricorder
+
+symmetricorder.py
+source/Symmetric Order/symmetricorder.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def process_input():
+    while True:
+        n = int(input())
+        if n == 0:
+            break
+
+        names = []
+        for _ in range(n):
+            names.append(input())
+
+        # Sort names by length
+        names.sort(key=len)
+
+        # Create pairs of names from the sorted list
+        pairs = []
+        for i in range(0, len(names), 2):
+            pairs.append((names[i], names[i + 1]))
+
+        # Print the result for the current set
+        print(f"SET {len(pairs) + 1}")
+        for pair in pairs:
+            print(pair[0], pair[1])
+
+process_input()
+solution written to file
+source/Symmetric Order/symmetricorder.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989093.
+Submission URL: https://open.kattis.com/submissions/14989093
+https://open.kattis.com/submissions/14989093
+
+Test cases: [x ]  1 / 2
+Run Time Error (0.06 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem N-Puzzle
+
+link:  https://open.kattis.com/problems/npuzzle
+
+npuzzle.py
+source/N-Puzzle/npuzzle.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def manhattan_distance(x1, y1, x2, y2):
+    return abs(x1 - x2) + abs(y1 - y2)
+
+def calculate_scatter(puzzle):
+    desired_layout = [
+        ['A', 'B', 'C', 'D'],
+        ['E', 'F', 'G', 'H'],
+        ['I', 'J', 'K', 'L'],
+        ['M', 'N', 'O', '.']
+    ]
+
+    scatter = 0
+    for i in range(4):
+        for j in range(4):
+            if puzzle[i][j] != '.':
+                x, y = i, j
+                x_desired, y_desired = desired_layout.index([puzzle[i][j]]), desired_layout[x][y]
+                scatter += manhattan_distance(x, y, x_desired, y_desired)
+
+    return scatter
+
+# Read input
+puzzle = []
+for _ in range(4):
+    puzzle.append(input().strip())
+
+# Calculate and print the scatter
+print(calculate_scatter(puzzle))
+solution written to file
+source/N-Puzzle/npuzzle.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989096.
+Submission URL: https://open.kattis.com/submissions/14989096
+https://open.kattis.com/submissions/14989096
+
+Test cases: [x           ]  1 / 12
+Run Time Error (0.06 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Patuljci
+
+link:  https://open.kattis.com/problems/patuljci
+
+patuljci.py
+source/Patuljci/patuljci.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+from itertools import combinations
+
+def find_legit_dwarves():
+    # Read input numbers
+    numbers = [int(input()) for _ in range(9)]
+
+    # Iterate over all combinations of 7 numbers from the 9
+    for combo in combinations(numbers, 7):
+        if sum(combo) == 100:
+            # Print the combination
+            print(*combo)
+            return
+
+# Call the function to find and print the legit dwarves
+find_legit_dwarves()
+solution written to file
+source/Patuljci/patuljci.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989097.
+Submission URL: https://open.kattis.com/submissions/14989097
+https://open.kattis.com/submissions/14989097
+
+Test cases: [..............]  14 / 14
+Accepted (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Prva
+
+link:  https://open.kattis.com/problems/prva
+
+prva.py
+source/Prva/prva.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def find_lexicographically_smallest_word(R, C, crossword):
+    def is_valid_word(word):
+        return len(word) >= 2
+
+    def get_horizontal_words(row):
+        words = []
+        current_word = ""
+        for char in row:
+            if char == "#":
+                if current_word:
+                    words.append(current_word)
+                    current_word = ""
+            else:
+                current_word += char
+        if current_word:
+            words.append(current_word)
+        return words
+
+    def get_vertical_words(col):
+        words = []
+        current_word = ""
+        for i in range(R):
+            char = crossword[i][col]
+            if char == "#":
+                if current_word:
+                    words.append(current_word)
+                    current_word = ""
+            else:
+                current_word += char
+        if current_word:
+            words.append(current_word)
+        return words
+
+    smallest_word = None
+
+    # Check horizontal words
+    for row in crossword:
+        words = get_horizontal_words(row)
+        for word in words:
+            if is_valid_word(word):
+                if smallest_word is None or word < smallest_word:
+                    smallest_word = word
+
+    # Check vertical words
+    for col in range(C):
+        words = get_vertical_words(col)
+        for word in words:
+            if is_valid_word(word):
+                if smallest_word is None or word < smallest_word:
+                    smallest_word = word
+
+    return smallest_word
+
+# Read input
+R, C = map(int, input().split())
+crossword = [input() for _ in range(R)]
+
+# Find and print the lexicographically smallest word
+smallest_word = find_lexicographically_smallest_word(R, C, crossword)
+print(smallest_word)
+solution written to file
+source/Prva/prva.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989100.
+Submission URL: https://open.kattis.com/submissions/14989100
+https://open.kattis.com/submissions/14989100
+
+Test cases: [...........]  11 / 11
+Accepted (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Veci
+
+link:  https://open.kattis.com/problems/veci
+
+veci.py
+source/Veci/veci.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def next_larger_number(X):
+    # Convert the number to a list of digits
+    digits = list(str(X))
+
+    # Traverse the digits from right to left
+    for i in range(len(digits) - 1, 0, -1):
+        if digits[i] > digits[i - 1]:
+            # Find the smallest digit greater than digits[i - 1]
+            for j in range(len(digits) - 1, i - 1, -1):
+                if digits[j] > digits[i - 1]:
+                    # Swap the found digit with digits[i - 1]
+                    digits[i - 1], digits[j] = digits[j], digits[i - 1]
+
+                    # Sort the digits after i - 1 in ascending order
+                    digits[i:] = sorted(digits[i:])
+
+                    # Convert the list of digits back to an integer
+                    return int(''.join(digits))
+
+    # If no larger number is found, return 0
+    return 0
+
+# Read input
+X = int(input())
+
+# Get the next larger number
+result = next_larger_number(X)
+
+# Print the result
+print(result)
+solution written to file
+source/Veci/veci.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989101.
+Submission URL: https://open.kattis.com/submissions/14989101
+https://open.kattis.com/submissions/14989101
+
+Test cases: [........]  8 / 8
+Accepted (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Beavergnaw
+
+link:  https://open.kattis.com/problems/beavergnaw
+
+beavergnaw.py
+source/Beavergnaw/beavergnaw.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+import math
+
+while True:
+    D, V = map(int, input().split())
+    if D == 0 and V == 0:
+        break
+
+    # Volume of the frustum of the cone
+    def frustum_volume(D, d):
+        return (math.pi * D * d * (D - d)) / 3
+
+    # Volume of the cylinder
+    def cylinder_volume(d):
+        return math.pi * d ** 2 * D
+
+    # Total volume to be chomped
+    total_volume = V
+
+    # Binary search to find the optimal diameter d
+    low, high = 0, D
+    while low < high:
+        mid = (low + high) // 2
+        volume = frustum_volume(D, mid) + cylinder_volume(mid)
+
+        if volume > total_volume:
+            high = mid
+        else:
+            low = mid + 1
+
+    # The final value of d
+    d = low
+
+    # Print the result rounded to 6 decimal places
+    print(f"{d:.6f}")
+solution written to file
+source/Beavergnaw/beavergnaw.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989105.
+Submission URL: https://open.kattis.com/submissions/14989105
+https://open.kattis.com/submissions/14989105
+
+Test cases: [x ]  1 / 2
+Wrong Answer (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Kemija
+
+link:  https://open.kattis.com/problems/kemija08
+
+kemija08.py
+source/Kemija/kemija08.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def decode_sentence(coded_sentence):
+    vowels = 'aeiou'
+    decoded_sentence = []
+
+    for word in coded_sentence.split():
+        decoded_word = []
+        i = 0
+        while i < len(word):
+            if word[i] in vowels:
+                decoded_word.append(word[i])
+                decoded_word.append('p')
+                decoded_word.append(word[i])
+                i += 3
+            else:
+                decoded_word.append(word[i])
+                i += 1
+        decoded_sentence.append(''.join(decoded_word))
+
+    return ' '.join(decoded_sentence)
+
+# Read input
+coded_sentence = input()
+
+# Decode the sentence
+decoded_sentence = decode_sentence(coded_sentence)
+
+# Print the output
+print(decoded_sentence)
+solution written to file
+source/Kemija/kemija08.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989107.
+Submission URL: https://open.kattis.com/submissions/14989107
+https://open.kattis.com/submissions/14989107
+
+Test cases: [x      ]  1 / 7
+Wrong Answer (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Erase Securely
+
+link:  https://open.kattis.com/problems/erase
+
+erase.py
+source/Erase Securely/erase.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def verify_deletion(N, original, modified):
+    # Check if each bit is switched N times
+    for i in range(len(original)):
+        if (original[i] == '0' and modified[i] == '1') or (original[i] == '1' and modified[i] == '0'):
+            return "Deletion failed"
+    return "Deletion succeeded"
+
+# Read input
+N = int(input())
+original = input()
+modified = input()
+
+# Verify deletion
+result = verify_deletion(N, original, modified)
+print(result)
+solution written to file
+source/Erase Securely/erase.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989109.
+Submission URL: https://open.kattis.com/submissions/14989109
+https://open.kattis.com/submissions/14989109
+
+Test cases: [x               ]  1 / 16
+Wrong Answer (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Flying Safely
+
+link:  https://open.kattis.com/problems/flyingsafely
+
+flyingsafely.py
+source/Flying Safely/flyingsafely.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+import sys
+from collections import defaultdict
+
+def find_min_pilots(n, m, flights):
+    # Build the graph
+    graph = defaultdict(list)
+    for a, b in flights:
+        graph[a].append(b)
+        graph[b].append(a)
+
+    # Initialize the visited set and the result list
+    visited = set()
+    result = []
+
+    # Depth-first search to find a spanning tree
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        result.append(node)
+        for neighbor in graph[node]:
+            dfs(neighbor)
+
+    # Start DFS from any node (we can choose any node since the graph is connected)
+    dfs(1)
+
+    # The number of nodes in the result list is the number of pilots needed
+    return len(result)
+
+# Read input
+input = sys.stdin.read
+data = input().split()
+
+# Parse the number of test cases
+num_test_cases = int(data[0])
+data = data[1:]
+
+# Process each test case
+for i in range(num_test_cases):
+    n, m = map(int, data[:2])
+    data = data[2:]
+
+    # Parse the flights
+    flights = []
+    for _ in range(m):
+        a, b = map(int, data[:2])
+        flights.append((a, b))
+        data = data[2:]
+
+    # Find the minimum number of pilots
+    min_pilots = find_min_pilots(n, m, flights)
+
+    # Output the result
+    print(min_pilots)
+solution written to file
+source/Flying Safely/flyingsafely.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989112.
+Submission URL: https://open.kattis.com/submissions/14989112
+https://open.kattis.com/submissions/14989112
+
+Test cases: [x ]  1 / 2
+Wrong Answer (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Riječi
+
+link:  https://open.kattis.com/problems/rijeci
+
+rijeci.py
+source/Riječi/rijeci.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def count_letters(K):
+    # Initialize the counts of 'A' and 'B'
+    count_A = 0
+    count_B = 0
+
+    # Iterate over each press of the button
+    for i in range(K):
+        if i % 2 == 0:
+            # If the press is even, add 'A' to count_A
+            count_A += 1
+        else:
+            # If the press is odd, add 'B' to count_B
+            count_B += 1
+
+    return count_A, count_B
+
+# Read the input value of K
+K = int(input())
+
+# Calculate the number of 'A' and 'B'
+count_A, count_B = count_letters(K)
+
+# Print the result
+print(count_A, count_B)
+solution written to file
+source/Riječi/rijeci.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989117.
+Submission URL: https://open.kattis.com/submissions/14989117
+https://open.kattis.com/submissions/14989117
+
+Test cases: [x            ]  1 / 13
+Wrong Answer (0.04 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Alphabet Spam
+
+link:  https://open.kattis.com/problems/alphabetspam
+
+alphabetspam.py
+source/Alphabet Spam/alphabetspam.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def main():
+    # Read the input string
+    input_string = input()
+
+    # Initialize counters for each category
+    whitespace_count = 0
+    lowercase_count = 0
+    uppercase_count = 0
+    symbol_count = 0
+
+    # Iterate over each character in the input string
+    for char in input_string:
+        if char == '_':
+            whitespace_count += 1
+        elif char.islower():
+            lowercase_count += 1
+        elif char.isupper():
+            uppercase_count += 1
+        else:
+            symbol_count += 1
+
+    # Calculate the total number of characters
+    total_characters = len(input_string)
+
+    # Calculate the ratios
+    whitespace_ratio = whitespace_count / total_characters
+    lowercase_ratio = lowercase_count / total_characters
+    uppercase_ratio = uppercase_count / total_characters
+    symbol_ratio = symbol_count / total_characters
+
+    # Print the ratios
+    print(whitespace_ratio)
+    print(lowercase_ratio)
+    print(uppercase_ratio)
+    print(symbol_ratio)
+
+if __name__ == "__main__":
+    main()
+solution written to file
+source/Alphabet Spam/alphabetspam.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989120.
+Submission URL: https://open.kattis.com/submissions/14989120
+https://open.kattis.com/submissions/14989120
+
+Test cases: [..................]  18 / 18
+Accepted (0.05 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Pervasive Heart Monitor
+
+link:  https://open.kattis.com/problems/pervasiveheartmonitor
+
+pervasiveheartmonitor.py
+source/Pervasive Heart Monitor/pervasiveheartmonitor.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+import re
+
+def calculate_average_heart_rate(customer_data):
+    # Split the input into individual customer data entries
+    entries = customer_data.split('\n')
+
+    # Initialize a dictionary to store the total heart rate and count for each customer
+    customer_averages = {}
+
+    for entry in entries:
+        # Use regular expression to find all heart rate values in the entry
+        heart_rates = re.findall(r'\d+\.\d+', entry)
+
+        # If there are no heart rates, skip to the next entry
+        if not heart_rates:
+            continue
+
+        # Calculate the average heart rate for this customer
+        total_hr = sum(float(hr) for hr in heart_rates)
+        count = len(heart_rates)
+        average_hr = round(total_hr / count, 4)
+
+        # Find the customer name in the entry
+        name_match = re.search(r'[^0-9\s]+', entry)
+        if name_match:
+            customer_name = name_match.group()
+        else:
+            customer_name = "Unknown"
+
+        # Store the average heart rate in the dictionary
+        customer_averages[customer_name] = average_hr
+
+    # Print the results in the required format
+    for name, avg_hr in customer_averages.items():
+        print(f"{avg_hr:.4f} {name}")
+
+# Read input from the user
+input_data = input()
+
+# Call the function to process the input and generate the report
+calculate_average_heart_rate(input_data)
+solution written to file
+source/Pervasive Heart Monitor/pervasiveheartmonitor.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989121.
+Submission URL: https://open.kattis.com/submissions/14989121
+https://open.kattis.com/submissions/14989121
+
+Test cases: [x ]  1 / 2
+Wrong Answer (0.05 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Sort of Sorting
+
+link:  https://open.kattis.com/problems/sortofsorting
+
+sortofsorting.py
+source/Sort of Sorting/sortofsorting.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+import sys
+
+def sort_student_last_names():
+    while True:
+        n = int(input())
+        if n == 0:
+            break
+
+        last_names = []
+        for _ in range(n):
+            last_names.append(input().strip())
+
+        # Sort the last names based on the first two letters
+        sorted_last_names = sorted(last_names, key=lambda x: x[:2])
+
+        # Print the sorted last names
+        for name in sorted_last_names:
+            print(name)
+
+        # Print a blank line between cases
+        print()
+
+# Read input from stdin and pass it to the function
+sort_student_last_names()
+solution written to file
+source/Sort of Sorting/sortofsorting.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989124.
+Submission URL: https://open.kattis.com/submissions/14989124
+https://open.kattis.com/submissions/14989124
+
+Test cases: [......]  6 / 6
+Accepted (0.13 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Secure Doors
+
+link:  https://open.kattis.com/problems/securedoors
+
+securedoors.py
+source/Secure Doors/securedoors.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def audit_access_log():
+    n = int(input())
+    current_employees = set()
+
+    for _ in range(n):
+        action, name = input().split()
+
+        if action == 'entry':
+            if name in current_employees:
+                print(f"{name} entered (ANOMALY)")
+            else:
+                print(f"{name} entered")
+                current_employees.add(name)
+        elif action == 'exit':
+            if name in current_employees:
+                print(f"{name} exited")
+                current_employees.remove(name)
+            else:
+                print(f"{name} exited (ANOMALY)")
+
+audit_access_log()
+solution written to file
+source/Secure Doors/securedoors.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989129.
+Submission URL: https://open.kattis.com/submissions/14989129
+https://open.kattis.com/submissions/14989129
+
+Test cases: [..]  2 / 2
+Accepted (0.06 s)
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Hiding Places
+
+link:  https://open.kattis.com/problems/hidingplaces
+
+hidingplaces.py
+source/Hiding Places/hidingplaces.py
+The new directory is created!
+
+Generating solution
+Solution generated: 
+
+def knight_moves(x, y):
+    directions = [(-2, -1), (-2, 1), (-1, -2), (-1, 2),
+                  (1, -2), (1, 2), (2, -1), (2, 1)]
+    return [(x + dx, y + dy) for dx, dy in directions]
+
+def is_valid(x, y, n):
+    return 0 <= x < n and 0 <= y < n
+
+def bfs(start_x, start_y, n):
+    queue = [(start_x, start_y, 0)]
+    visited = set()
+    visited.add((start_x, start_y))
+
+    while queue:
+        x, y, steps = queue.pop(0)
+
+        if steps > 0:
+            yield steps, (x, y)
+
+        for nx, ny in knight_moves(x, y):
+            if is_valid(nx, ny, n) and (nx, ny) not in visited:
+                visited.add((nx, ny))
+                queue.append((nx, ny, steps + 1))
+
+def find_hiding_places(start_x, start_y, n):
+    max_steps = 0
+    hiding_places = []
+
+    for steps, (x, y) in bfs(start_x, start_y, n):
+        if steps > max_steps:
+            max_steps = steps
+            hiding_places = [(x, y)]
+        elif steps == max_steps:
+            hiding_places.append((x, y))
+
+    return max_steps, sorted(hiding_places)
+
+def main():
+    n = int(input())
+    results = []
+
+    for _ in range(n):
+        start = input().split()
+        start_x, start_y = ord(start[0]) - ord('a'), int(start[1]) - 1
+        n = 8
+        max_steps, hiding_places = find_hiding_places(start_x, start_y, n)
+        results.append(f"{max_steps} {' '.join([f'{chr(ord('a') + x)}{y + 1}' for x, y in hiding_places])}")
+
+    for result in results:
+        print(result)
+
+if __name__ == "__main__":
+    main()
+solution written to file
+source/Hiding Places/hidingplaces.py
+C:\Users\hugom\Documents\KattisBot
+Submission received. Submission ID: 14989133.
+Submission URL: https://open.kattis.com/submissions/14989133
+https://open.kattis.com/submissions/14989133
+
+Compile Error
+https://open.kattis.com/
+[login] Candidate username(s): ['hugo-bot1']
+[login] Successfully logged in to Kattis as hugo-bot1!
+[database] Listed all available languages!
+[database] Listed all 208 available countries!
+[database] Listed all 3940 available universities!
+
+Selecting problem Bus
+
+link:  https://open.kattis.com/problems/bus
+
+bus.py
+source/Bus/bus.py
+The new directory is created!
+
+Generating solution
+Solution generated:
+
+def main():
+    T = int(input())
+    for _ in range(T):
+        k = int(input())
+        n = 2 ** (k + 1) - 1
+        print(n)
+
+if __name__ == "__main__":
+    main()
+solution written to file
+Login failed.
+Incorrect username or password/token (403)

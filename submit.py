@@ -11,7 +11,7 @@ import time
 
 from lxml.html import fragment_fromstring
 
-_DEFAULT_CONFIG = 'C:/Users/hugom/Documents/KattisBot/.kattisrc'
+_DEFAULT_CONFIG = './KattisBot/.kattisrc'
 _LANGUAGE_GUESS = {
     '.4th': 'Forth',
     '.c': 'C',

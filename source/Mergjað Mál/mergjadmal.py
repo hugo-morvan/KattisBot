@@ -1,10 +1,11 @@
-
-def process_input():
-    input_string = input()
-    
-    if '69' in input_string or '420' in input_string:
+def process_input(input_text):
+    if '69' in input_text or '420' in input_text:
         print("Mergjad!")
     else:
         print("Leim!")
 
-process_input()
+# Read input
+input_text = input()
+
+# Process the input
+process_input(input_text)
