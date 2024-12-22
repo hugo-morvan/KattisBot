@@ -373,4 +373,4 @@ def submit_problem(files, problem):
         if not show_judgement(submission_url, cfg):
             pass
             #sys.exit(1)
-    return None
+    return plain_result
