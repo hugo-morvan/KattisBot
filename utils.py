@@ -1,7 +1,7 @@
 
 
 def write_solution(file_path, solution):
-    with open(file_path, 'w') as f: 
+    with open(file_path, 'w', encoding='utf-8') as f: 
             f.write(solution)
             
 def extract_code(text: str) -> str:
