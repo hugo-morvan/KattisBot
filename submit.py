@@ -80,7 +80,7 @@ _GUESS_MAINFILE = {
     'JavaScript (SpiderMonkey)', 'Julia', 'Common Lisp', 'Lua', 'Nim', 'Octave', 'Pascal', 'Perl', 'PHP',
 	'Python 2', 'Python 3', 'Racket', 'Ruby', 'Rust', 'Simula', 'Smalltalk', 'SNOBOL', 'TypeScript', 'Zig',
 }
-_HEADERS = { 'User-Agent': 'kattis-cli-submit' }
+_HEADERS = { 'User-Agent': 'kattis-cli-submit' } #Change this to include email adress
 _RUNNING_STATUS = 5
 _COMPILE_ERROR_STATUS = 8
 _ACCEPTED_STATUS = 16
