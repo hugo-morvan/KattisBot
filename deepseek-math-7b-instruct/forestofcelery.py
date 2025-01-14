@@ -1,0 +1,15 @@
+ from itertools import combinations
+import sys
+n = int(sys.stdin.readline())+1  # The number of points in alexa forest including itself (as per clarifiction) as we need to consider all the combination for finding minimum no vertex polygon, so total point will be n + base case i..e one pt which is not part if ans
+base_case = [[0]*2]  # storing a dummy pointset with only on element(one of those in k sighting) as we need to consider all the combination for finding minimum no vertex polygon, so total point will be n + base case i..e one pt which is not part if ans
+points_set = []   # empty list where each time new pointset (combination found out from K sets ) would b added and it's convex hull calculated  to find valid polygons(with all k sighting inside) with min no vertices. This process will be continued until the point when adding any more combination won't decrease number of vertex in ans
+for i in range(n): # loop for getting points from alexa forest input as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times. 0r start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    x = int(sys.stdin.readline().split()[0]) # gettin gx coordinate as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times.  or start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    y = int(sys.stdin.readline().split()[0]) # getting gy coordinate as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times or start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    points_set.append([x , y ]) 
+k = int(sys.stdin.readline()) # getting k as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times or start with base case and then add other (real)points iteratively until no further decrease of vertex possible    
+for i in range(k):  # loop for reading all the K sighting points as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times or start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    x = int(sys.stdin.readline().split()[0]) # getting gx coordinate as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times or start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    y = int(sys.stdin.readline().split()[0]) # getting gy coordinate as per clarifiction, we need to consider only one extra pt which is not part if ans so n+1 times or start with base case and then add other (real)points iteratively until no further decrease of vertex possible
+    points_set.append([x , y ]) 
+# Generator time: 18.0827 seconds

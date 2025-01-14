@@ -1,0 +1,17 @@
+ import math as m
+import decimal as d
+d.getcontext().prec = 65 # Set precision to reasonable number for this problem (see constraints) - should be good enough that no answers will ever come out rounded due to rounding errors in calc, and more than most problems need go beyond working precision of float/double etc
+# Define the function which calculates Beata's position at time t: note it takes W as input too!  (and angular speed!)   This is a bit messy because we have two cases depending on whether or not 'W' has gone past an integer number of full rotations since they started - in this problem, there will never be more than one quarter rotation gap between them so the logic here should cover all possibilities
+def Beata_position(t, W): # t is time (in seconds) and we know Agneta always starts first at 0s but let's not hard-code that in case it changes! Also note this function takes 'W', which encodes when they started riding relative to each other too.
+    if ((1/2)*(t + W)) % 1 < (1/4): # Beata has done less than a quarter rotation by t seconds after Agneta starts, i.e. she hasn't yet caught up from where the two riders started together at time zero: so her position is just what it would be if they had always been together
+        return ((m.cos((1/2)*(0 + W) * 2* m.pi), # radius of circle (which we could leave as symbolic 'r' to generalise for different radii, but that doesn't affect the answer here so...) and theta=angle traversed: note Beata always goes twice as fast linear speed-wise than Agneta
+                      -m.sin((1/2)*(0 + W) * 2* m.pi), # y first then x in trig functions because we use standard Cartesian (x,y) coords here rather than alternative 'up' vs 'right' etc for bearings from centre of circle! see https://en.wikipedia.org/wiki/Polar_coordinate_system#Converting_to_Cartesian_coordinates
+                      1), # radius=distance from origin to point on circumference (constant since we are considering a unit-radius circle here) - note this would be 'r' in generalisation above! 
+                      ((m.cos((t + W)*2* m.pi)), # theta is proportional both linear distance travelled and time elapsed due angular speed=1 rad/s: see https://en.wikipedia.org/wiki/Angular_speed#Formulae, note the radius (here =1) drops out!
+                       -m.sin((t + W)*2* m.pi), 
+                       0)) # y then x coordinates respectively for 'up' vs 'right' interpretation of bearings from centre as per https://en.wikipedia.org/wiki/Polar_coordinate_system#Converting_to_Cartesian_coordinates, again note radius (=1) drops out!
+    else: 
+        return ((m.cos((t + W - (0.5))*2 * m.pi)), # now Beata has done more than a quarter rotation by t seconds after Agneta starts riding so her position is where she'd be if they had been together since start minus one full rotation: see https://en.wikipedia.org/wiki/Angular_speed#Formulae, note radius (=1) drops out!
+                      -m.sin((t + W - (0.5))*2 * m.pi),  # y then x coordinates respectively for 'up' vs 'right' interpretation of bearings from centre as per https://en.wikipedia.org/wiki/Polar_coordinate_system#Converting_to_Cartesian_coordinates, again note radius (=1) drops out!
+                      0))   
+# Generator time: 20.8750 seconds
