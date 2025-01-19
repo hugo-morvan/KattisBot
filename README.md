@@ -1,10 +1,16 @@
-# KattisBot
+# Code Generation Capabilities of LLMs: A Comparative Analysis Using
+Competitive Programming Problems
 
-This is a repository for a bot that automatically fetchs, solves, and submit problems from Kattis.
+This is a repository for my Text Mining course final project. All the code generated can be found under the eponyme directories. Most of the code used for the project can be found in TextMiningproject.ipynb, with some helper functions in utils.py. The images used in the report are in the images directory.
+
+## Abstract 
+
+Large Language models (LLMs) have demonstrated remarkable advancements in natural language processing, but their performance on competitive programming tasks remains an open question as benchmarks usually focus on more traditional coding tasks. Competitive programming tasks require not only linguistic understanding but also algorithmic and mathematical reasoning, precision and efficiency. This paper evaluates the problem-solving capabilities of 5 small size LLMs on a set of competitive programming problems from the publicly available coding platform Open.Kattis. Each code generated is evaluated on compiling correctness, success on sample input/output combinations and finally on the online judging platform directly. The results reveal a significant gap between the ability of the LLMs to produce correct code, which is pretty good, and the ability of the LLMs to produce code that actually solves the competitive programming tasks, which is not very good. These finding offer a valuable insight to the current state of most LLMs, which is that although they appear to produce valuable outputs, they actually lack strong reasoning capabilities to produce qualitative outputs.
+
 
 ### Disclaimer: 
 
-This is for educational purposes only, I used this project to learn to fine tune a LLM and uses LLMs in a real cases scenario. All code generated was submitted on a seperated account from my main account.*
+I am concious that using generative AI might go against the Kattis website TOS. This is for educational purposes only, I used this project to learn to fine tune a LLM and uses LLMs in a real cases scenario. All code generated was submitted on a seperated account from my main account.*
 
 Further more, here are 2 extratxs from the Kattis term of services that are relevant for this project:
 
@@ -29,8 +35,3 @@ You may operate a tool to automatically access content from Kattis, such as a se
   - c. You must rate limit your access not to cause adverse effects on our services
   - d. You must make it clear how to contact you in the user agent string, by supplying an e-mail or URL with contact information
   - e. We reserve the right to ban any form of automated access at our discretion
-
-
-## Overview
-
-TBD
