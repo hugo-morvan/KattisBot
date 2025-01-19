@@ -1,5 +1,4 @@
-# Code Generation Capabilities of LLMs: A Comparative Analysis Using
-Competitive Programming Problems
+# Code Generation Capabilities of LLMs: A Comparative Analysis Using Competitive Programming Problems
 
 This is a repository for my Text Mining course final project. All the code generated can be found under the eponyme directories. Most of the code used for the project can be found in TextMiningproject.ipynb, with some helper functions in utils.py. The images used in the report are in the images directory.
 
